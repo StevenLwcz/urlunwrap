@@ -3,7 +3,7 @@ Often URLs contain another URL which has been encoded. So you click on the basic
 This little tool can help get to the inner url. Just say the main url is:
 https://www.pleaseclick.com?url=.....encoded url&tracking_data=......
 
-You could use: urlunwrap "^https://www.please" "url=(?P<url>.*)&tracking_data"
+You could use: urlunwrap "^https://www.please" "url=(?P\<url\>.*)&tracking_data"
 Paste the url into stdin and you will get the underlying url.
 
 The first URL just acts as bit of sanity checking so the URL decode and regular expression

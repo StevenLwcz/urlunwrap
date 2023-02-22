@@ -8,3 +8,6 @@ edition = "2021"
 [dependencies]
 regex = "1.7.1"
 urldecode = "0.1.1"
+
+[dev-dependencies]
+assert_cmd = "1"
