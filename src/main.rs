@@ -58,13 +58,9 @@ fn scan_stdin<R>(reg1: &Regex, reg2: &Regex, reader: R) where R: BufRead
 
 fn decode_string(line :&str, reg2: &Regex)
 {
-    let result = urldecode::decode(line);
+    let result = urldecode::decode(line.to_string());
 
     let caps = reg2.captures(&result).unwrap();
     let text1 = &caps["url"];
     println!("Result: {}", &text1);
-}
-
-fn hex_to_char(s: &str) -> char {
-    char::from((u8::from_str_radix(s, 16)).unwrap())
 }
